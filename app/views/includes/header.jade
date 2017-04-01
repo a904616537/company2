@@ -1,0 +1,47 @@
+header.transparent.light(role='banner')
+  .row
+    .nav-inner.row-content.buffer-left.buffer-right.even.clear-after
+      #brand
+        h1.reset
+          a(href='/') #{settings.find(n => n.key == 'compamy_logo').value}
+      a#menu-toggle(href='#')
+        i.fa.fa-bars.fa-lg
+      nav
+        ul.reset(role='navigation')
+          li.menu-item
+            a(href='/') #{__('mune.home')}
+          li.menu-item
+            a(href='#') #{__('mune.about')}
+            ul.sub-menu
+              each item in nav.about
+                li
+                  a(href='/about/#{item._id}')
+                    | #{item.lang.title}
+          li.menu-item
+            a(href='#') #{__('mune.service')}
+            ul.sub-menu
+              each item in nav.server
+                li
+                  a(href='/about/#{item._id}')
+                    | #{item.lang.title}
+          li#news.menu-item
+            a(href='/list')
+              | #{__('mune.news')}
+
+          li#contact.dropdown
+            a(href='#')
+              | #{__('mune.contact')}
+            ul.sub-menu
+              each item in nav.contact
+                li
+                  a(href='/about/#{item._id}')
+                    | #{item.lang.title}
+
+          li.menu-item
+            a.twitter-share.border-box(href='javascript:switchEN();')
+              i(style='background-image: url(/img/EN.jpg);')
+              | English
+          li.menu-item
+            a.twitter-share.border-box(href='javascript:switchCH();')
+              i(style='background-image: url(/img/ZH.jpg);')
+              | 中文

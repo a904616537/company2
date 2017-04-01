@@ -1,0 +1,221 @@
+doctype html
+html(lang='en')
+  include includes/head
+  body.page
+    include includes/header
+    main(role='main')
+      #intro-wrap
+        #intro.preload.darken(data-autoplay='5000', data-navigation='true', data-pagination='true', data-transition='fadeUp')
+          each item in banner
+            .intro-item(style='background-image: url(#{item.imgurl});')
+      #main
+        section.row.section.call-to-action
+          .row-content.buffer.even
+            h2 #{settings.find(n => n.key == 'compamy_name').value}
+        section.row.section.text-light(style='background-color: #4FC1E9')
+          .row-content.buffer.even.clear-after
+
+            - var company1 = nav.server[0]
+            .column.four.centertxt
+              a(href='/about/#{company1._id}')
+                .big-icon.red
+                  i.img(style='background-image: url(/img/1.jpg);')
+                .big-icon-text.clear-after
+                  h4 #{company1.lang.title}
+                  p.text-s #{company1.lang.subtext}
+
+            - var company2 = nav.server[1]
+            .column.four.centertxt
+              a(href='/about/#{company2._id}')
+                .big-icon.red
+                  i.img(style='background-image: url(/img/2.jpg);')
+                .big-icon-text.clear-after
+                  h4 #{company2.lang.title}
+                  p.text-s #{company2.lang.subtext}
+
+            - var company3 = nav.server[2]
+            .column.four.last.centertxt
+              a(href='/about/#{company3._id}')
+                .big-icon.red
+                  i.img(style='background-image: url(/img/3.jpg);')
+                .big-icon-text.clear-after
+                  h4 #{company3.lang.title}
+                  p.text-s #{company3.lang.subtext}
+
+            - var company4 = nav.server[3]
+            .column.four.centertxt
+              a(href='/about/#{company4._id}')
+                .big-icon.red
+                  i.img(style='background-image: url(/img/4.jpg);')
+                .big-icon-text.clear-after
+                  h4 #{company4.lang.title}
+                  p.text-s #{company4.lang.subtext}
+
+            - var company5 = nav.server[4]
+            .column.four.centertxt
+              a(href='/about/#{company5._id}')
+                .big-icon.red
+                  i.img(style='background-image: url(/img/5.jpg);')
+                .big-icon-text.clear-after
+                  h4 #{company5.lang.title}
+                  p.text-s #{company5.lang.subtext}
+            - var company6 = nav.server[5]
+            .column.four.last.centertxt
+              a(href='/about/#{company6._id}')
+                .big-icon.red
+                  i.img(style='background-image: url(img/7.jpg);')
+                .big-icon-text.clear-after
+                  h4 #{company6.lang.title}
+                  p.text-s #{company6.lang.subtext}
+        //- section.row.section
+        //-   .row-content.buffer.even.clear-after
+        //-     .section-title
+        //-       h3 资讯动态
+        //-     .grid-items.blog-section.masonry-style.preload
+        //-       article.item.column.six
+        //-         a(href='#')
+        //-           figure
+        //-             img(src='img/news1.jpg', alt='')
+        //-             span.blog-overlay
+        //-               i.icon.icon-doc
+        //-           .blog-excerpt
+        //-             .blog-excerpt-inner
+        //-               h3.meta-post 标题
+        //-               h5 这里是描述。。。。。。。。。
+        //-       article.item.column.three
+        //-         a(href='#')
+        //-           figure
+        //-             img(src='img/news2.jpg', alt='')
+        //-             span.blog-overlay
+        //-               i.icon.icon-doc
+        //-           .blog-excerpt
+        //-             .blog-excerpt-inner
+        //-               h3.meta-post 标题
+        //-               h5 这里是描述。。。。。。。。。
+        //-       article.item.column.three
+        //-         a(href='#')
+        //-           figure
+        //-             img(src='img/news2.jpg', alt='')
+        //-             span.blog-overlay
+        //-               i.icon.icon-doc
+        //-           .blog-excerpt
+        //-             .blog-excerpt-inner
+        //-               h3.meta-post 标题
+        //-               h5 这里是描述。。。。。。。。。
+        //-       article.item.column.three
+        //-         a(href='#')
+        //-           figure
+        //-             img(src='img/news2.jpg', alt='')
+        //-             span.blog-overlay
+        //-               i.icon.icon-doc
+        //-           .blog-excerpt
+        //-             .blog-excerpt-inner
+        //-               h3.meta-post 标题
+        //-               h5 这里是描述。。。。。。。。。
+        //-       article.item.column.three
+        //-         a(href='#')
+        //-           figure
+        //-             img(src='img/news2.jpg', alt='')
+        //-             span.blog-overlay
+        //-               i.icon.icon-doc
+        //-           .blog-excerpt
+        //-             .blog-excerpt-inner
+        //-               h3.meta-post 标题
+        //-               h5 这里是描述。。。。。。。。。
+        //-       article.item.column.six
+        //-         a(href='#')
+        //-           figure
+        //-             img(src='img/news3.jpg', alt='')
+        //-             span.blog-overlay
+        //-               i.icon.icon-doc
+        //-           .blog-excerpt
+        //-             .blog-excerpt-inner
+        //-               h3.meta-post 标题
+        //-               h5 这里是描述。。。。。。。。。
+        //-       .shuffle-sizer.three
+        //-     .more-btn
+        //-       a.button.transparent.aqua(href='#') 查看更多公司动态
+
+        - var about = nav.about[0]
+        section.row.section
+          .row-content.buffer.even.clear-after
+            .column.six.push-six.last-special
+              h2 #{about.lang.title}
+              !{about.lang.subtext}
+              a.button.transparent.aqua(href='/about/#{about._id}') #{__('learnmore')}
+            .side-mockup.left-mockup.animation
+              .slider.desktop-slider(data-autoplay='5000')
+                figure
+                  each item in about.imgurl
+                    div(style='background-image: url(#{item});')
+        - var about1 = nav.about[1]
+        section.row.section(style='background-color:#4FC1E9;')
+          .row-content.buffer.even.clear-after
+            .column.six
+              h2 #{about1.lang.title}
+              !{about1.lang.subtext}
+              a.button.transparent.white(href='/about/#{about1._id}') #{__('learnmore')}
+            .side-mockup.right-mockup.animation
+              .slider.desktop-slider(data-autoplay='false')
+                figure
+                  each item in about1.imgurl
+                    div(style='background-image: url(#{item});')
+
+        section.row.section
+          .row-content.buffer.even.clear-after
+            .section-title
+              h3 #{__('business')}
+            p.centertxt
+              !{__('business.content')}
+            
+            .chart(data-percent='25', data-bar-color='#ac92ec', data-animate='3500')
+              .chart-content
+                .percent
+                .chart-title h3 #{__('business.1')}
+            .chart(data-percent='35', data-bar-color='#fd685b', data-animate='2000')
+              .chart-content
+                .percent
+                .chart-title #{__('business.2')}
+            .chart(data-percent='45', data-bar-color='#ffce54', data-animate='2500')
+              .chart-content
+                .percent
+                .chart-title #{__('business.3')}
+            .chart(data-percent='10', data-bar-color='#a0d468', data-animate='3000')
+              .chart-content
+                .percent
+                .chart-title #{__('business.4')}
+            .chart(data-percent='90', data-bar-color='#4FC1E9', data-animate='3500')
+              .chart-content
+                .percent
+                .chart-title #{__('business.5')}
+            
+        section.row.section.text-light(style='background-color:#4FC1E9;')
+          .row-content.buffer.even.clear-after
+            .section-title
+              h3 #{__('show')}
+            .column.three.circle
+              figure.about-us
+                img(src='img/t2.jpg', alt='')
+            .column.three.circle
+              figure.about-us
+                img(src='img/t3.jpg', alt='')
+            .column.three.circle
+              figure.about-us
+                img(src='img/t4.jpg', alt='')
+            .column.three.circle.last
+              figure.about-us
+                img(src='img/t5.jpg', alt='')
+            
+            .column.four.circle
+              figure.about-us
+                img(src='img/t6.jpg', alt='')
+            .column.four.circle
+              figure.about-us
+                img(src='img/t7.jpg', alt='')
+            .column.four.circle.last
+              figure.about-us
+                img(src='img/t8.jpg', alt='')
+                  
+    include includes/footer
+    script(src='/js/plugins.js')
+    script(src='/js/beetle.js')

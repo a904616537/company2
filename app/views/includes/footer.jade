@@ -1,0 +1,23 @@
+footer(role='contentinfo')
+  .row
+    .row-content.buffer.clear-after
+      section#top-footer
+        .widget.column.three
+          h4 #{__('contact')}
+          ul.plain
+            li #{__('contact.address.key')}：#{settings.find(n => n.key == 'address').value}
+            li #{__('contact.phone.key')}：#{settings.find(n => n.key == 'phone').value}
+            li #{__('contact.phone2')}：#{settings.find(n => n.key == 'email').value}
+        .widget.column.three
+        .widget.column.three
+        .widget.meta-social.column.three
+          h4 #{__('qrcode')}
+          ul.inline
+            li
+              img(src='/img/erweima.jpg', width='130')
+      section#bottom-footer
+        p.keep-left
+          | © 2016 
+          a(href='javascript:;', alt='Mokaine Lab') 备案号
+          | . 备案声明.
+        p.keep-right 版权所有声明.

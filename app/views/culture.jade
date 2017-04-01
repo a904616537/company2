@@ -1,0 +1,35 @@
+doctype html
+html(lang='en')
+  include includes/head
+  body.single.single-post
+    include includes/header
+    
+    main(role='main')
+      #intro-wrap(data-height='22.222')
+        #intro.preload.darken
+          .intro-item(style='background-image: url(/img/about.png);')
+            // caption
+          // intro
+        // intro
+      // intro-wrap
+      #main.row
+        .row-content.buffer-left.buffer-right.buffer-bottom
+          .post-area.clear-after
+            article(role='main')
+              h5.meta-post
+                a(href='javascript:;') #{news.lang.title}
+                |  - 
+                time(datetime='2016-03-10') #{news.time}
+              h1 #{news.lang.title}
+              
+              .gallery.slider(data-autoplay='false', data-autoheight='false')
+                figure
+                  div
+                    img(src='#{news.imgurl}', alt='')
+              div
+                !{news.lang.context}
+
+
+    include includes/footer
+    script(src='/js/plugins.js')
+    script(src='/js/beetle.js')

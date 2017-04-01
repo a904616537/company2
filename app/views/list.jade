@@ -1,0 +1,54 @@
+doctype html
+html(lang='en')
+  include includes/head
+  body.blog.list-style
+    include includes/header
+    main(role='main')
+      #intro-wrap(data-height='22.222')
+        #intro.preload.darken
+          .intro-item(style='background-image: url(/img/banner/banner1.jpg);')
+      #main.row
+        .row-content.buffer-left.buffer-right.buffer-bottom.clear-after
+          .column
+            #post-nav
+              ul.clear-after.reset.plain
+                li#all-items.post-nav
+                  h3 #{__('news.list.title')}
+            each item in news
+            
+              article.clear-after.article
+                .column.three
+                  figure
+                    img(src='#{item.imgurl}', alt='')
+                // column three
+                .column.nine.last
+                  h2
+                    a(href='/article/#{item._id}') #{item.lang.title}
+                  h5.meta-post 
+                    time(datetime='2016-03-10') #{item.time}
+                  p
+                    | #{item.lang.desc}
+                // column nine
+            
+            #pagination
+              ul.clear-after.reset.plain
+                li#older.pagination-nav
+                  a#pagepre.button.transparent.aqua(href='javascript:;')
+                    i.fa.fa-chevron-left
+                    span.label 上一页
+                li#newer.pagination-nav
+                  a#pagenext.button.transparent.aqua(href='javascript:;')
+                    span.label 下一页
+                    i.fa.fa-chevron-right
+    
+    include includes/footer
+    script(src='/js/plugins.js')
+    script(src='/js/beetle.js')
+    script(src='/js/easypage.js')
+    script.
+      $(function() {
+        $.easypage({
+          'contentclass': 'article',
+          'everycount': 5
+        });
+      })

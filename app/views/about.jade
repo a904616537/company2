@@ -1,0 +1,37 @@
+doctype html
+html(lang='en')
+  include includes/head
+  body.single.single-post
+    include includes/header
+    
+    main(role='main')
+      #intro-wrap(data-height='22.222')
+        #intro.preload.darken
+          .intro-item(style='background-image: url(#{company.banner});')
+            // caption
+          // intro
+        // intro
+      // intro-wrap
+      #main.row
+        .row-content.buffer-left.buffer-right.buffer-bottom
+          
+          .post-area.clear-after
+            article(role='main')
+              h5.meta-post
+                a(href='javascript:;') #{company.lang.title}
+                |  - 
+                time(datetime='2016-03-10') #{company.lang.time}
+              h1 #{company.lang.title}
+              
+              .gallery.slider(data-autoplay='false', data-autoheight='false')
+                each item in company.imgurl
+                  figure
+                    div
+                      img(src='#{item}', alt='')
+              div
+                !{company.lang.context}
+
+
+    include includes/footer
+    script(src='/js/plugins.js')
+    script(src='/js/beetle.js')
