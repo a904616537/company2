@@ -5,9 +5,9 @@ footer(role='contentinfo')
         .widget.column.three
           h4 #{__('contact')}
           ul.plain
-            li #{__('contact.address.key')}：#{settings.find(n => n.key == 'address').value}
-            li #{__('contact.phone.key')}：#{settings.find(n => n.key == 'phone').value}
-            li #{__('contact.phone2')}：#{settings.find(n => n.key == 'email').value}
+            li #{__('contact.address.key')}：!{settings.find(n => n.key == 'address').value}
+            li #{__('contact.phone.key')}：!{settings.find(n => n.key == 'phone').value}
+            li #{__('contact.phone2')}：!{settings.find(n => n.key == 'email').value}
         .widget.column.three
         .widget.column.three
         .widget.meta-social.column.three
