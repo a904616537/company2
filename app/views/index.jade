@@ -67,74 +67,41 @@ html(lang='en')
                 .big-icon-text.clear-after
                   h4 #{company6.lang.title}
                   p.text-s #{company6.lang.subtext}
-        //- section.row.section
-        //-   .row-content.buffer.even.clear-after
-        //-     .section-title
-        //-       h3 资讯动态
-        //-     .grid-items.blog-section.masonry-style.preload
-        //-       article.item.column.six
-        //-         a(href='#')
-        //-           figure
-        //-             img(src='img/news1.jpg', alt='')
-        //-             span.blog-overlay
-        //-               i.icon.icon-doc
-        //-           .blog-excerpt
-        //-             .blog-excerpt-inner
-        //-               h3.meta-post 标题
-        //-               h5 这里是描述。。。。。。。。。
-        //-       article.item.column.three
-        //-         a(href='#')
-        //-           figure
-        //-             img(src='img/news2.jpg', alt='')
-        //-             span.blog-overlay
-        //-               i.icon.icon-doc
-        //-           .blog-excerpt
-        //-             .blog-excerpt-inner
-        //-               h3.meta-post 标题
-        //-               h5 这里是描述。。。。。。。。。
-        //-       article.item.column.three
-        //-         a(href='#')
-        //-           figure
-        //-             img(src='img/news2.jpg', alt='')
-        //-             span.blog-overlay
-        //-               i.icon.icon-doc
-        //-           .blog-excerpt
-        //-             .blog-excerpt-inner
-        //-               h3.meta-post 标题
-        //-               h5 这里是描述。。。。。。。。。
-        //-       article.item.column.three
-        //-         a(href='#')
-        //-           figure
-        //-             img(src='img/news2.jpg', alt='')
-        //-             span.blog-overlay
-        //-               i.icon.icon-doc
-        //-           .blog-excerpt
-        //-             .blog-excerpt-inner
-        //-               h3.meta-post 标题
-        //-               h5 这里是描述。。。。。。。。。
-        //-       article.item.column.three
-        //-         a(href='#')
-        //-           figure
-        //-             img(src='img/news2.jpg', alt='')
-        //-             span.blog-overlay
-        //-               i.icon.icon-doc
-        //-           .blog-excerpt
-        //-             .blog-excerpt-inner
-        //-               h3.meta-post 标题
-        //-               h5 这里是描述。。。。。。。。。
-        //-       article.item.column.six
-        //-         a(href='#')
-        //-           figure
-        //-             img(src='img/news3.jpg', alt='')
-        //-             span.blog-overlay
-        //-               i.icon.icon-doc
-        //-           .blog-excerpt
-        //-             .blog-excerpt-inner
-        //-               h3.meta-post 标题
-        //-               h5 这里是描述。。。。。。。。。
-        //-       .shuffle-sizer.three
-        //-     .more-btn
-        //-       a.button.transparent.aqua(href='#') 查看更多公司动态
+        section.row.section
+          .row-content.buffer.even.clear-after
+            .section-title
+              h3 #{__('mune.news')}
+            .grid-items.blog-section.masonry-style.preload
+
+              each item,index in news
+                if (index == 0 || index == 5)
+                  article.item.column.six
+                    a(href='/article/#{item._id}')
+                      figure
+                        img(src='#{item.imgurl}', alt='')
+                        span.blog-overlay
+                          i.icon.icon-doc
+                      .blog-excerpt
+                        .blog-excerpt-inner
+                          h3.meta-post #{item.lang.title}
+                          h5 #{item.lang.desc}
+                else
+                  article.item.column.three
+                    a(href='/article/#{item._id}')
+                      figure
+                        img(src='#{item.imgurl}', alt='')
+                        span.blog-overlay
+                          i.icon.icon-doc
+                      .blog-excerpt
+                        .blog-excerpt-inner
+                          h3.meta-post #{item.lang.title}
+                          h5 #{item.lang.desc}
+              
+              .shuffle-sizer.three
+            .more-btn
+              a.button.transparent.aqua(href='/list') #{__('learnmore')}
+
+
 
         - var about = nav.about[0]
         section.row.section
