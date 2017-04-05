@@ -43,6 +43,7 @@ module.exports = function (app) {
     var lang = req.cookies.lang
     if(lang == 'zh-CN') lang = 'zh';
     else if(!lang) lang = 'zh'
+      console.log('lang', lang)
     setting_service.getSettingBylang(lang, (err, settings) => {
       banner_service.Get(banner => {
         getnav(lang, date => {
