@@ -7,7 +7,7 @@ html(lang='en')
     main(role='main')
       #intro-wrap(data-height='22.222')
         #intro.preload.darken
-          .intro-item(style='background-image: url(#{news.imgurl});')
+          .intro-item(style='background-image: url(/img/news.jpg);')
             // caption
           // intro
         // intro
@@ -22,10 +22,10 @@ html(lang='en')
                 time(datetime='2016-03-10') #{news.time}
               h1 #{news.lang.title}
               
-              // .gallery.slider(data-autoplay='false', data-autoheight='false')
-                // figure
-                  // div
-                    // img(src='#{news.imgurl}', alt='')
+              .gallery.slider(data-autoplay='false', data-autoheight='false')
+                figure
+                  div
+                    img(src='#{news.imgurl}', alt='')
               div
                 !{news.lang.context}
 
