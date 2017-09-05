@@ -3,7 +3,7 @@ header.transparent.light(role='banner')
     .nav-inner.row-content.buffer-left.buffer-right.even.clear-after
       #brand
         h1.reset
-          a(href='/') #{settings.find(n => n.key == 'compamy_logo').value}
+          a(href='/') #{settings.find(n => n.key == 'compamy_logo')?settings.find(n => n.key == 'compamy_logo').value:''}
       a#menu-toggle(href='#')
         i.fa.fa-bars.fa-lg
       nav

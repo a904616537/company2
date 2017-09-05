@@ -11,7 +11,7 @@ html(lang='en')
       #main
         section.row.section.call-to-action
           .row-content.buffer.even
-            h2 #{settings.find(n => n.key == 'compamy_name').value}
+            h2 #{settings.find(n => n.key == 'compamy_name')?settings.find(n => n.key == 'compamy_name').value:''}
         section.row.section.text-light(style='background-color: #4FC1E9')
           .row-content.buffer.even.clear-after
 
@@ -133,7 +133,7 @@ html(lang='en')
             .section-title
               h3 #{__('business')}
             p.centertxt
-              !{__('business.content')}
+              #{__('business.content')}
             
             .chart(data-percent='25', data-bar-color='#ac92ec', data-animate='3500')
               .chart-content
