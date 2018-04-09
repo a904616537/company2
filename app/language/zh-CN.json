@@ -68,5 +68,13 @@
 	"mune": "菜单",
 	"show": "企业秀",
 	"mune.news": "新闻资讯",
-	"news.list.title": "新闻列表"
+	"news.list.title": "新闻列表",
+	"floating.title": "南非拼箱收货！",
+	"floating.desc1": "南非普货以及危险品直拼<br/>（3/6/8/9 类）",
+	"floating.desc2": "支持到南非各基本港以及内陆点",
+	"mune.newslist": "新闻列表",
+	"mune.special": "特价查询",
+	"mune.tool": "常用工具",
+	"download": "下载文档",
+	"bullet.expiration": "文件失效日期"
 }

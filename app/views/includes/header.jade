@@ -25,8 +25,14 @@ header.transparent.light(role='banner')
                   a(href='/about/#{item._id}')
                     | #{item.lang.title}
           li#news.menu-item
-            a(href='/list')
-              | #{__('mune.news')}
+            a(href='#') #{__('mune.news')}
+            ul.sub-menu
+              li
+                a(href='/list')
+                  | #{__('mune.newslist')}
+              li
+                a(href='/bullet')
+                  | #{__('mune.special')}
 
           li#contact.dropdown
             a(href='#')
@@ -34,7 +40,7 @@ header.transparent.light(role='banner')
             ul.sub-menu
               each item in nav.contact
                 li
-                  a(href='/about/#{item._id}')
+                  a(href='/contact/#{item._id}')
                     | #{item.lang.title}
 
           li.menu-item

@@ -1,8 +1,10 @@
 const async           = require('async');
+const moment          = require('moment');
 const company_service = require('../service/company.service');
 const setting_service = require('../service/setting.service');
-const banner_service = require('../service/banner.service');
-const news_service = require('../service/news.service');
+const banner_service  = require('../service/banner.service');
+const news_service    = require('../service/news.service');
+const bullet_service  = require('../service/bullet.service');
 
 function getnav(lang, cb) {
   company_service.getCompany((err, companys) => {
@@ -92,8 +94,50 @@ module.exports = function (app) {
       })
   });
 
-  app.get('/contact', function (req, res) {
-    res.render('contact');
+  app.get('/contact/:_id', function (req, res) {
+    var _id = req.params._id;
+    var nav = [];
+    var lang = req.cookies.lang
+    if(lang == 'zh-CN') lang = 'zh';
+    else if(!lang) lang = 'zh'
+    setting_service.getSettingBylang(lang, (err, settings) => {
+      getnav(lang, date => {
+        nav = date
+        company_service.SelectById(_id)
+        .then(company => {
+          company.lang = company.article.find(article => {
+            return article.language == lang
+          });
+          res.render('contact', {company, nav: nav, settings});
+        })
+        .catch(err => {
+          res.render('contact', {company:{lang:{}}, nav: nav, settings});
+        })
+      })      
+    })
+  });
+
+  app.get('/bullet', function (req, res) {
+    var nav = [];
+    var lang = req.cookies.lang
+    if(lang == 'zh-CN') lang = 'zh';
+    else if(!lang) lang = 'zh'
+    setting_service.getSettingBylang(lang, (err, settings) => {
+      getnav(lang, date => {
+        nav = date
+        bullet_service.getBullet((bullets) => {
+          bullets = bullets.map(bullet => {
+            bullet.time = moment(bullet.createTime).format('YYYY年MM月DD日 HH:mm:ss');
+            bullet.lang = bullet.article.find(article => {
+              return article.language == lang
+            });
+            return bullet;
+          })
+          console.log('bullets', bullets)
+          res.render('bullet', {bullets, nav: nav, settings});
+        })
+      })      
+    })
   });
 
   app.get('/list', function (req, res) {

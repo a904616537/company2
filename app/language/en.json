@@ -8,7 +8,7 @@
 	"mune.about": "About",
 	"mune.introduce": "Introduce",
 	"mune.team": "Team",
-	"mune.service": "Service",
+	"mune.service": "Logistics Service",
 	"mune.service-1": "Ocean FCL Service",
 	"mune.service-2": "Airfreight",
 	"mune.service-3": "LCL",
@@ -68,5 +68,13 @@
 	"mune": "mune",
 	"show": "Enterprise Show",
 	"mune.news": "News",
-	"news.list.title": "News List"
+	"news.list.title": "News List",
+	"floating.title": "South Africa Consol Box",
+	"floating.desc1": "Collction Non-DG & DG Goods<br/>(Class:3/6/8/9)",
+	"floating.desc2": "The service covering <br/> all inland of South Africa",
+	"mune.newslist": "News List",
+	"mune.special": "Bullet Rate",
+	"mune.tool": "Tools",
+	"download": "Download",
+	"bullet.expiration": "File expiration date"
 }

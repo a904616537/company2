@@ -1606,6 +1606,45 @@ footer .meta-social ul li {
     vertical-align: -15%;
 }
 
+/*----------------------------------------------------------------
+    Floation
+----------------------------------------------------------------*/
+
+.floating {
+    width                      : 230px;
+    position                   : fixed;
+    top                        : 40%;
+    border                     : 1px #FD685B solid;
+    z-index                    : 999;
+    overflow                   : hidden;
+    border-top-right-radius    : 5px;
+    border-bottom-right-radius : 5px;
+    background-color           : #fff;
+}
+.floating .show{
+    font-size        : 14px;
+    width            : 25px;
+    height           : 200px;
+    line-height      : 200px;
+    color            : #FD685B;
+    float            : right;
+    clear            : none;
+    text-align       : center;
+    background-color : #333;
+}
+.floating .content .title{
+    font-size : 14px;
+    color     : #FD685B;
+}
+.floating .content {
+    width      : 200px;
+    float      : left;
+    clear      :none;
+    font-size  : 12px;
+    text-align : center;
+    padding    : 20px;
+}
+
 
 /*----------------------------------------------------------------
     Sections

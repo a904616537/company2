@@ -1,30 +1,30 @@
 doctype html
 html(lang='en')
   include includes/head
-  body.page
+  body.single.single-post
     include includes/header
     
     main(role='main')
       #intro-wrap(data-height='22.222')
         #intro.preload.darken
-          .intro-item(style='background-image: url(img/banner/banner1.jpg);')
-            //- .caption
-            //-   h2 Steve Jobs
-            //-   p To live is to change the world.
+          .intro-item(style='background-image: url(#{company.banner});')
             // caption
           // intro
         // intro
       // intro-wrap
-      #main
+      #main.row
         section.row.section
-          .row-content.buffer.even.clear-after
+          .row-content.buffer.even.clear-after.contact
             .section-title
               h3 #{__('contact')}
-            p #{__('contact.address.key')}：!{__('contact.address')}
-            p #{__('contact.phone.key')}：!{__('contact.phone')}
-            p !{__('contact.phone2')}
-      // id-main
-    // main
+            !{company.lang.context}
+            .gallery.slider.leftimg(data-autoplay='false', data-autoheight='false')
+                each item in company.imgurl
+                  figure
+                    div
+                      img(src='#{item}', alt='')
+
+
     include includes/footer
-    script(src='js/plugins.js')
-    script(src='js/beetle.js')
+    script(src='/js/plugins.js')
+    script(src='/js/beetle.js')
