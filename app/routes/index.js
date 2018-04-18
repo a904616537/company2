@@ -154,4 +154,19 @@ module.exports = function (app) {
         })  
       })
   })
+
+  app.get('/tool', function (req, res) {
+    var nav = [];
+    var lang = req.cookies.lang
+    if(lang == 'zh-CN') lang = 'zh';
+    else if(!lang) lang = 'zh'
+    setting_service.getSettingBylang(lang, (err, settings) => {
+      news_service.getNews(lang, news => {
+        getnav(lang, date => {
+              nav = date
+              res.render('tool', {nav: nav, settings, news});
+            })
+        })  
+      })
+  })
 }
