@@ -1621,6 +1621,12 @@ footer .meta-social ul li {
     border-bottom-right-radius : 5px;
     background-color           : #fff;
 }
+.floating a{
+    text-decoration: none;
+}
+.floating a:hover{
+    text-decoration: underline;
+}
 .floating .show{
     font-size        : 14px;
     width            : 25px;

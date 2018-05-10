@@ -1,6 +1,6 @@
 header.transparent.light(role='banner')
   .row
-    .nav-inner.row-content.buffer-left.buffer-right.even.clear-after
+    .nav-inner.row-content.buffer-left.buffer-right.even.clear-after(style="max-width:85em")
       #brand
         h1.reset
           a(href='/') #{settings.find(n => n.key == 'compamy_logo')?settings.find(n => n.key == 'compamy_logo').value:''}
@@ -33,9 +33,6 @@ header.transparent.light(role='banner')
               li
                 a(href='/bullet')
                   | #{__('mune.special')}
-              li
-                a(href='/tool')
-                  | #{__('mune.tool')}
 
 
           li#contact.dropdown

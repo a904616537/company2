@@ -24,12 +24,10 @@ footer(role='contentinfo')
           | . 备案声明.
         p.keep-right 版权所有声明.
 .floating
-  .content
-    .title #{__('floating.title')}
+  a.content(href="/bullet")
+    .title #{settings.find(n => n.key == 'adver')?settings.find(n => n.key == 'adver').value:''}
     p.desc
-      span !{__('floating.desc1')}
-      br
-      span !{__('floating.desc2')}
+      !{settings.find(n => n.key == 'adver_desc')?settings.find(n => n.key == 'adver_desc').value:''}
   .show 
     i.fa.fa-angle-double-left
 script(src='/js/app.js')
