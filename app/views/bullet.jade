@@ -17,17 +17,17 @@ html(lang='en')
             each item in bullets
             
               article.clear-after.article
-                .column.three
+                .column.sixth
                   figure
                     img(src='/img/dashboard_excel.png', alt='#{item.lang.title}')
                 // column three
                 .column.nine.last
-                  h2 #{item.lang.title}
+                  h4(style="margin-top:0;") #{item.lang.title}
                   h5.meta-post 
                     time(datetime='2016-03-10') #{item.time}
                   h5.meta-post
                     time(datetime='2016-03-10') (#{__('bullet.expiration')})#{item.endTime} 
-                  a.button.transparent.aqua(href='http://admin.skyfortune.sh.cn/bullet/download/#{item._id}' download='#{item.lang.title}')
+                  a.transparent.aqua(href='http://admin.skyfortune.sh.cn/bullet/download/#{item._id}' download='#{item.lang.title}')
                     span.label #{__('download')}
                 // column nine
             
