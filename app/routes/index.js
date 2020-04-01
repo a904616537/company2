@@ -8,11 +8,13 @@ const bullet_service  = require('../service/bullet.service');
 
 function getnav(lang, cb) {
   company_service.getCompany((err, companys) => {
+
     var about = [], server = [], contact = [];
     async.each(companys, (company, cb) => {
       company.lang = company.article.find(article => {
         return article.language == lang
       });
+      console.log('test companys --->', company);
       switch(company.pid) {
         case 0:
           about.push(company);
@@ -49,6 +51,7 @@ module.exports = function (app) {
       banner_service.Get(banner => {
         news_service.getNewsIndex(lang, news => {
           getnav(lang, date => {
+            console.log('nav', date)
             nav = date
             res.render('index', {nav: nav, settings, banner, news});
           })
